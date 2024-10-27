@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.todo-form input[type="text"] {
+    width: 60%;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+.todo-form button {
+    padding: 8px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.task-link {
+    color: #333;
+    text-decoration: none;
+}
+
+.status.done {
+    color: green;
+}
+
+.status.not-done {
+    color: red;
+}
+
+.task-details {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.complete-btn {
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.nav-button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.nav-button:hover {
+    background-color: #0056b3;
+}
+
+
+.close-btn {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}

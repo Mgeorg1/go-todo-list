@@ -1,0 +1,19 @@
+{{define "taskview"}}
+{{if .}}
+<div class="task-details">
+    <h2>{{.Title}}</h2>
+    <p>{{.Text.String}}</p>
+
+    <!-- Кнопки действий -->
+    <form action="/done/{{.ID}}" method="POST" style="display:inline;">
+        <button type="submit" class="complete-btn">&#10004; Завершить</button>
+    </form>
+    <form action="/delete/{{.ID}}" method="POST" style="display:inline;">
+        <button type="submit" class="delete-btn">&#128465; Удалить</button>
+    </form>
+    <form action="/" method="GET" style="display:inline;">
+        <button type="submit" class="close-btn">&#10006; Закрыть</button>
+    </form>
+</div>
+{{end}}
+{{end}}

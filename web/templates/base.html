@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Todo List</h1>
+
+    <!-- Форма добавления новой задачи -->
+    <form action="/add" method="POST" class="todo-form">
+        <input type="text" name="title" placeholder="Заголовок задачи" required>
+        <input type="text" name="text" placeholder="Текст задачи">
+        <button type="submit">Добавить</button>
+    </form>
+
+    <form action="/search" method="GET" class="todo-form">
+        <input type="text" name="title">
+        <button type="submit">Поиск</button>
+    </form>
+
+    {{if .TaskSelected}}
+        {{template "taskview" .SelectedTask}}
+    {{end}}
+
+    <ul class="todo-list">
+        {{range .Tasks}}
+        <li class="todo-item">
+            <a href="/?taskID={{.ID}}" class="task-link">{{.Title}}</a>
+            {{if .Done.Bool}}
+            <span class="status done">&#10004; Выполнено</span>
+            {{else}}
+            <span class="status not-done">&#10006; Не выполнено</span>
+            {{end}}
+        </li>
+        {{else}}
+        <li class="no-tasks">No tasks yet!</li>
+        {{end}}
+    </ul>
+
+    <div class="pagination">
+        {{if gt .CurrentPage 1}}
+        <a href="/?page={{sub .CurrentPage 1}}" class="nav-button">Назад</a>
+        {{end}}
+        <a href="/?page={{add .CurrentPage 1}}" class="nav-button">Вперед</a>
+    </div>
+</div>
+</body>
+</html>
